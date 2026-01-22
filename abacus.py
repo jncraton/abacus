@@ -151,16 +151,13 @@ class Abacus:
         """
         Returns an ASCII representation of the current state
         """
-        lines = [
+        return "\n".join([
             " ".join("O" if r.upperBeadsUp == 1 else "|" for r in self.rods),
             " ".join("|" if r.upperBeadsUp == 1 else "O" for r in self.rods),
             "-" * (len(self.rods) * 2 - 1),
-        ]
-        
-        for i in range(5):
-            lines.append(" ".join('|' if i == r.lowerBeadsUp else 'O' for r in self.rods))
-            
-        return "\n".join(lines)
+        ] + [
+            " ".join('|' if i == r.lowerBeadsUp else 'O' for r in self.rods) for i in range(5)
+        ])
 
     def __repr__(self):
         return str(self.rods)
