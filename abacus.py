@@ -32,6 +32,7 @@ class Rod:
     ...
     ValueError: lowerBeadsUp must be between 0 and 4
     """
+
     def __init__(self, upperBeadsUp=1, lowerBeadsUp=0):
         self.upperBeadsUp = upperBeadsUp
         self.lowerBeadsUp = lowerBeadsUp
@@ -55,7 +56,7 @@ class Rod:
         if not (0 <= value <= 4):
             raise ValueError("lowerBeadsUp must be between 0 and 4")
         self._lowerBeadsUp = value
-        
+
     def __repr__(self):
         return str((self.upperBeadsUp, self.lowerBeadsUp))
 
@@ -78,19 +79,20 @@ class Rod:
         >>> int(Rod(1, 4))
         4
         """
-        
+
+
 class Abacus:
     """
     A soroban abacus
 
     An abacus is list of `Rod` entities accessible as the `rods` property
-    
+
     >>> Abacus()
     [(1, 0), (1, 0), (1, 0), (1, 0), (1, 0)]
-    
+
     >>> Abacus([Rod(1, 1)]).rods[-1]
     (1, 1)
-    
+
     >>> print(Abacus())
     O O O O O
     | | | | |
@@ -120,7 +122,7 @@ class Abacus:
     O O O O O
     O O O O |
     O O O O O
-    
+
     >>> print(Abacus([Rod(0, 1), Rod(1, 4)]))
     O O O | O
     | | | O |
@@ -131,7 +133,8 @@ class Abacus:
     O O O O O
     O O O O |
     """
-    def __init__(self, rods = [], size=5):
+
+    def __init__(self, rods=[], size=5):
         """
         Instantiate an abacus
 
@@ -139,58 +142,61 @@ class Abacus:
         @param size: The total width of the abaucs
         """
         size = max(size, len(rods))
-    
+
         # `size` Rods from left (0) to right (size)
         self.rods = [Rod() for _ in range(size)]
 
         # Set any provided rods pushing to the right
         for i, rod in enumerate(rods[::-1]):
-            self.rods[-(i+1)] = rod
+            self.rods[-(i + 1)] = rod
 
     def __str__(self):
         """
         Returns an ASCII representation of the current state
         """
-        return "\n".join([
-            " ".join("O" if r.upperBeadsUp == 1 else "|" for r in self.rods),
-            " ".join("|" if r.upperBeadsUp == 1 else "O" for r in self.rods),
-            "-" * (len(self.rods) * 2 - 1),
-        ] + [
-            " ".join('|' if i == r.lowerBeadsUp else 'O' for r in self.rods) for i in range(5)
-        ])
+        return "\n".join(
+            [
+                " ".join("O" if r.upperBeadsUp == 1 else "|" for r in self.rods),
+                " ".join("|" if r.upperBeadsUp == 1 else "O" for r in self.rods),
+                "-" * (len(self.rods) * 2 - 1),
+            ]
+            + [
+                " ".join("|" if i == r.lowerBeadsUp else "O" for r in self.rods)
+                for i in range(5)
+            ]
+        )
 
     def __repr__(self):
         return str(self.rods)
 
     def __int__(self):
-        """ Produce an integer value for the entire abacus
+        """Produce an integer value for the entire abacus
 
         >>> int(Abacus())
         0
-        
+
         >>> int(Abacus([Rod(1, 1)]))
         1
-        
+
         >>> int(Abacus([Rod(1, 1), Rod(1, 1)]))
         11
-        
+
         >>> int(Abacus([Rod(0, 1), Rod(1, 1)]))
         61
-        
+
         >>> int(Abacus([Rod(0, 1), Rod(0, 3), Rod(0, 2)]))
         687
         """
-        
-        
+
 
 def add_abacus(a, b):
     """
     Performs addition rod-by-rod with carries.
-    
+
     Example: 2 + 2 = 4
     >>> int(add_abacus(Abacus([Rod(1, 2)]), Abacus([Rod(1, 2)])).rods[-1])
     4
-    
+
     Example: 5 + 5 = 10 (Carry to next rod)
     >>> int(add_abacus(Abacus([Rod(0, 0)]), Abacus([Rod(0, 0)])).rods[-2])
     1
@@ -203,18 +209,19 @@ def add_abacus(a, b):
     [(1, 0), (1, 0), (1, 1), (1, 0), (1, 0)]
     """
 
+
 def sub_abacus(a, b):
     """
     Performs subtraction rod-by-rod with borrows.
-    
+
     Example: 5 - 2 = 3
     >>> int(sub_abacus(Abacus([Rod(0, 0)]), Abacus([Rod(1, 2)])))
     3
-    
+
     Example: 10 - 1 = 9
     >>> int(sub_abacus(Abacus([Rod(1, 1), Rod(1, 0)]), Abacus([Rod(1, 1)])))
     9
-    
+
     Example: 100 - 1 = 99
     >>> int(sub_abacus(Abacus([Rod(1, 1), Rod(1, 0), Rod(1, 0)]), Abacus([Rod(1, 1)])))
     99
@@ -226,4 +233,5 @@ def sub_abacus(a, b):
 
 if __name__ == "__main__":
     import doctest
+
     doctest.testmod()
