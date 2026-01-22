@@ -81,7 +81,7 @@ class Rod:
 
 class Abacus:
     """
-    An abacus
+    A soroban abacus
 
     An abacus is list of `Rod` entities accessible as the `rods` property
     
