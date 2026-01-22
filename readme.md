@@ -24,7 +24,10 @@ The abacus is build around place values in base 10, much like the modern decimal
 
 Handout code is provided in [abacus.py](abacus.py). You task is to implement `get_rod_value`, `get_abacus_value`, `add_abacus`, and `sub_abacus` such that the provided doctests pass.
 
+While not strictly required, it is encouraged to complete this work in abacus space. Your understanding of the abacus, and this sort of computation generally, will be enhanced by moving beads around directly rather than the simpler approach of converting the entire abacus to an `int`, using the built-in `+` or `-` operator, and then create a new abacus from the resulting `int`.
+
 Tests can be run as `python -m doctest abacus.py`, `python abacus.py`, or `make test`, depending on your personal preference and environment.
+
 
 ## Resources
 
