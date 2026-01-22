@@ -1,6 +1,6 @@
 # Abacus
 
-Add and subtract like an abacus in Python
+An abacus in Python
 
 ## Learning Objectives
 
