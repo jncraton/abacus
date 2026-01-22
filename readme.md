@@ -12,7 +12,9 @@ After completing this project, learners will be able to:
 
 ## How an abacus works
 
-There have been many different abacus designs. The specific abacus used in this project is the Japanese [Soroban](https://en.wikipedia.org/wiki/Soroban)
+There have been many different abacus designs. The specific abacus used in this project is the Japanese [Soroban](https://en.wikipedia.org/wiki/Soroban).
+
+![Soroban](https://upload.wikimedia.org/wikipedia/commons/a/a9/%DA%86%D8%B1%D8%AA%DA%A9%D9%87_%DA%98%D8%A7%D9%BE%D9%86%DB%8C.jpg)
 
 ## Resources
 
