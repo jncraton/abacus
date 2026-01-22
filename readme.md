@@ -20,6 +20,11 @@ The abacus is build around place values in base 10, much like the modern decimal
 
 ![](media/digits.png)
 
+> [!NOTE]
+> The Elsi Mate EL-8048 Sorokaru exists
+
+![Elsi Mate EL-8048 Sorokaru](media/calc.png)
+
 ## Task
 
 Handout code is provided in [abacus.py](abacus.py). You task is to implement `get_rod_value`, `get_abacus_value`, `add_abacus`, and `sub_abacus` such that the provided doctests pass.
