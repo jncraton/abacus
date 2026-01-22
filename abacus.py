@@ -91,12 +91,23 @@ class Abacus:
     >>> Abacus([Rod(1, 1)]).rods[-1]
     (1, 1)
     
+    >>> print(Abacus())
+    O O O O O
+    | | | | |
+    ---------
+    | | | | |
+    O O O O O
+    O O O O O
+    O O O O O
+    O O O O O
+
     >>> print(Abacus([Rod(1, 1)]))
     O O O O O
     | | | | |
     ---------
     | | | | O
     O O O O |
+    O O O O O
     O O O O O
     O O O O O
 
@@ -106,6 +117,17 @@ class Abacus:
     ---------
     | | | O O
     O O O | O
+    O O O O O
+    O O O O |
+    O O O O O
+    
+    >>> print(Abacus([Rod(0, 1), Rod(1, 4)]))
+    O O O | O
+    | | | O |
+    ---------
+    | | | O O
+    O O O | O
+    O O O O O
     O O O O O
     O O O O |
     """
@@ -135,16 +157,8 @@ class Abacus:
             "-" * (len(self.rods) * 2 - 1),
         ]
         
-        for i in range(1, 5):
-            row = []
-            for r in self.rods:
-                if i <= r.lowerBeadsUp:
-                    row.append("O")
-                elif i == r.lowerBeadsUp + 1:
-                    row.append("|")
-                else:
-                    row.append("O")
-            lines.append(" ".join(row))
+        for i in range(5):
+            lines.append(" ".join('|' if i == r.lowerBeadsUp else 'O' for r in self.rods))
             
         return "\n".join(lines)
 
