@@ -15,6 +15,7 @@ class Rod:
 
     def __int__(self):
         """
+        Convert this rod to an int
 
         >>> int(Rod())
         0
