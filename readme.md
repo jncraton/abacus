@@ -33,7 +33,7 @@ Tests can be run as `python -m doctest abacus.py`, `python abacus.py`, or `make 
 
 - [wikiHow - How an abacus works](https://www.wikihow.com/Use-an-Abacus)
 
-Fun fact: The Elsi Mate EL-8048 Sorokaru exists:
+Fun fact: In the transition to modern electronic calculators in the late 1970s and early 1980s, devices like the Elsi Mate EL-8048 Sorokaru were produced:
 
 ![Elsi Mate EL-8048 Sorokaru](media/calc.png)
 
