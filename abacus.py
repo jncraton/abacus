@@ -189,7 +189,7 @@ class Abacus:
         """
 
 
-def add_abacus(a, b):
+def add_abacus(a: Abacus, b: Abacus) -> Abacus:
     """
     Performs addition rod-by-rod with carries.
 
@@ -210,7 +210,7 @@ def add_abacus(a, b):
     """
 
 
-def sub_abacus(a, b):
+def sub_abacus(a: Abacus, b: Abacus) -> Abacus:
     """
     Performs subtraction rod-by-rod with borrows.
 
