@@ -125,6 +125,29 @@ class Abacus:
         for i, rod in enumerate(rods[::-1]):
             self.rods[-(i+1)] = rod
 
+    def __str__(self):
+        """
+        Returns an ASCII representation of the current state
+        """
+        lines = [
+            " ".join("O" if r.upperBeadsUp == 1 else "|" for r in self.rods),
+            " ".join("|" if r.upperBeadsUp == 1 else "O" for r in self.rods),
+            "-" * (len(self.rods) * 2 - 1),
+        ]
+        
+        for i in range(1, 5):
+            row = []
+            for r in self.rods:
+                if i <= r.lowerBeadsUp:
+                    row.append("O")
+                elif i == r.lowerBeadsUp + 1:
+                    row.append("|")
+                else:
+                    row.append("O")
+            lines.append(" ".join(row))
+            
+        return "\n".join(lines)
+
     def __repr__(self):
         return str(self.rods)
 
