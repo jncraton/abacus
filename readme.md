@@ -28,7 +28,6 @@ While not strictly required, it is encouraged to complete addition and subtracti
 
 Tests can be run as `python -m doctest abacus.py`, `python abacus.py`, or `make test`, depending on your personal preference and environment.
 
-
 ## Resources
 
 - [wikiHow - How an abacus works](https://www.wikihow.com/Use-an-Abacus)
@@ -36,4 +35,3 @@ Tests can be run as `python -m doctest abacus.py`, `python abacus.py`, or `make 
 Fun fact: In the transition to modern electronic calculators in the late 1970s and early 1980s, devices like the Elsi Mate EL-8048 Sorokaru were produced:
 
 ![Elsi Mate EL-8048 Sorokaru](media/calc.png)
-
