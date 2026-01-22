@@ -5,11 +5,57 @@ class Rod:
     The upper bead represents 5 if the bead is **down**.
 
     Lower beads are worth one for each bead that is up.
+
+    >>> Rod(0, 1)
+    (0, 1)
+
+    >>> Rod(1, 3)
+    (1, 3)
+
+    >>> Rod(2, 1)
+    Traceback (most recent call last):
+    ...
+    ValueError: upperBeadsUp must be 0 or 1
+
+    >>> Rod(-1, 1)
+    Traceback (most recent call last):
+    ...
+    ValueError: upperBeadsUp must be 0 or 1
+
+    >>> Rod(0, 5)
+    Traceback (most recent call last):
+    ...
+    ValueError: lowerBeadsUp must be between 0 and 4
+
+    >>> Rod(0, -1)
+    Traceback (most recent call last):
+    ...
+    ValueError: lowerBeadsUp must be between 0 and 4
     """
     def __init__(self, upperBeadsUp=1, lowerBeadsUp=0):
         self.upperBeadsUp = upperBeadsUp
         self.lowerBeadsUp = lowerBeadsUp
 
+    @property
+    def upperBeadsUp(self):
+        return self._upperBeadsUp
+
+    @upperBeadsUp.setter
+    def upperBeadsUp(self, value):
+        if value not in (0, 1):
+            raise ValueError("upperBeadsUp must be 0 or 1")
+        self._upperBeadsUp = value
+
+    @property
+    def lowerBeadsUp(self):
+        return self._lowerBeadsUp
+
+    @lowerBeadsUp.setter
+    def lowerBeadsUp(self, value):
+        if not (0 <= value <= 4):
+            raise ValueError("lowerBeadsUp must be between 0 and 4")
+        self._lowerBeadsUp = value
+        
     def __repr__(self):
         return str((self.upperBeadsUp, self.lowerBeadsUp))
 
