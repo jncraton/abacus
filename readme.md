@@ -22,7 +22,7 @@ The abacus is built around place values in base 10, much like the modern decimal
 
 ## Task
 
-Handout code is provided in [abacus.py](abacus.py). You task is to implement `get_rod_value`, `get_abacus_value`, `add_abacus`, and `sub_abacus` such that the provided doctests pass.
+Handout code is provided in [abacus.py](abacus.py). You task is to implement `__int__` for Rod and Abacus as we;; as `add_abacus`, and `sub_abacus` such that the provided doctests pass.
 
 While not strictly required, it is encouraged to complete addition and subtraction directly in abacus space. Your understanding of the abacus, and this sort of computation generally, will be enhanced by moving beads around directly rather than the simpler approach of converting the entire abacus to an `int`, using the built-in `+` or `-` operator, and then creating a new abacus from the resulting `int`.
 
