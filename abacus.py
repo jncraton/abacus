@@ -1,4 +1,11 @@
 class Rod:
+    """
+    A single rod on an  abacus representing a base 10 digit
+
+    The upper bead represents 5 if the bead is **down**.
+
+    Lower beads are worth one for each bead that is up.
+    """
     def __init__(self, upperBeadsUp=1, lowerBeadsUp=0):
         self.upperBeadsUp = upperBeadsUp
         self.lowerBeadsUp = lowerBeadsUp
