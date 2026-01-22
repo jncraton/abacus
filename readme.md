@@ -20,6 +20,12 @@ The abacus is build around place values in base 10, much like the modern decimal
 
 ![](media/digits.png)
 
+## Task
+
+Handout code is provided in [abacus.py](abacus.py). You task is to implement `get_rod_value`, `get_abacus_value`, `add_abacus`, and `sub_abacus` such that the provided doctests pass.
+
+Tests can be run as `python -m doctest abacus.py`, `python abacus.py`, or `make test`, depending on your personal preference and environment.
+
 ## Resources
 
 - [wikiHow - How an abacus works](https://www.wikihow.com/Use-an-Abacus)
