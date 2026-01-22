@@ -13,6 +13,25 @@ class Rod:
     def __repr__(self):
         return str((self.upperBeadsUp, self.lowerBeadsUp))
 
+    def __int__(self):
+        """
+
+        >>> int(Rod())
+        0
+
+        >>> int(Rod(1, 0))
+        0
+
+        >>> int(Rod(1, 1))
+        1
+
+        >>> int(Rod(0, 3))
+        8
+
+        >>> int(Rod(1, 4))
+        4
+        """
+
 class Abacus:
     """
     An abacus
