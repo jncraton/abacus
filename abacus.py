@@ -8,6 +8,10 @@ class Rod:
 
 class Abacus:
     """
+    An abacus
+
+    An abacus is list of `Rod` entities accessible as the `rods` property
+    
     >>> Abacus()
     [(1, 0), (1, 0), (1, 0), (1, 0), (1, 0)]
     
