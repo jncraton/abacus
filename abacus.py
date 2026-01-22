@@ -15,6 +15,12 @@ class Abacus:
     (1, 1)
     """
     def __init__(self, rods = [], size=5):
+        """
+        Instantiate an abacus
+
+        @param rods: A list of as initial abacus state, pushed right
+        @param size: The total width of the abaucs
+        """
         size = max(size, len(rods))
     
         # `size` Rods from left (0) to right (size)
