@@ -78,7 +78,7 @@ class Rod:
         >>> int(Rod(1, 4))
         4
         """
-
+        
 class Abacus:
     """
     A soroban abacus
@@ -162,6 +162,66 @@ class Abacus:
     def __repr__(self):
         return str(self.rods)
 
+    def __int__(self):
+        """ Produce an integer value for the entire abacus
+
+        >>> int(Abacus())
+        0
+        
+        >>> int(Abacus([Rod(1, 1)]))
+        1
+        
+        >>> int(Abacus([Rod(1, 1), Rod(1, 1)]))
+        11
+        
+        >>> int(Abacus([Rod(0, 1), Rod(1, 1)]))
+        61
+        
+        >>> int(Abacus([Rod(0, 1), Rod(0, 3), Rod(0, 2)]))
+        687
+        """
+        
+        
+
+def add_abacus(a, b):
+    """
+    Performs addition rod-by-rod with carries.
+    
+    Example: 2 + 2 = 4
+    >>> int(add_abacus(Abacus([Rod(1, 2)]), Abacus([Rod(1, 2)])).rods[-1])
+    4
+    
+    Example: 5 + 5 = 10 (Carry to next rod)
+    >>> int(add_abacus(Abacus([Rod(0, 0)]), Abacus([Rod(0, 0)])).rods[-2])
+    1
+
+    Example: 99 + 1 = 100
+    >>> int(add_abacus(Abacus([Rod(0, 4), Rod(0, 4)]), Abacus([Rod(1, 1)])).rods[-3])
+    1
+
+    >>> add_abacus(Abacus([Rod(0, 4), Rod(0, 4)]), Abacus([Rod(1, 1)]))
+    [(1, 0), (1, 0), (1, 1), (1, 0), (1, 0)]
+    """
+
+def sub_abacus(a, b):
+    """
+    Performs subtraction rod-by-rod with borrows.
+    
+    Example: 5 - 2 = 3
+    >>> int(sub_abacus(Abacus([Rod(0, 0)]), Abacus([Rod(1, 2)])))
+    3
+    
+    Example: 10 - 1 = 9
+    >>> int(sub_abacus(Abacus([Rod(1, 1), Rod(1, 0)]), Abacus([Rod(1, 1)])))
+    9
+    
+    Example: 100 - 1 = 99
+    >>> int(sub_abacus(Abacus([Rod(1, 1), Rod(1, 0), Rod(1, 0)]), Abacus([Rod(1, 1)])))
+    99
+
+    >>> sub_abacus(Abacus([Rod(1, 1), Rod(1, 0), Rod(1, 0)]), Abacus([Rod(1, 1)]))
+    [(1, 0), (1, 0), (1, 0), (0, 4), (0, 4)]
+    """
 
 
 if __name__ == "__main__":
