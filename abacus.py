@@ -9,14 +9,16 @@ class Rod:
 class Abacus:
     """
     >>> Abacus()
-    [(1, 0), (1, 0), (1, 0), (1, 0), (1, 0), (1, 0), (1, 0), (1, 0), (1, 0)]
+    [(1, 0), (1, 0), (1, 0), (1, 0), (1, 0)]
     
     >>> Abacus([Rod(1, 1)]).rods[-1]
     (1, 1)
     """
-    def __init__(self, rods = []):
-        # 9 Rods from left (0) to right (8)
-        self.rods = [Rod() for _ in range(9)]
+    def __init__(self, rods = [], size=5):
+        size = max(size, len(rods))
+    
+        # `size` Rods from left (0) to right (size)
+        self.rods = [Rod() for _ in range(size)]
 
         # Set any provided rods pushing to the right
         for i, rod in enumerate(rods[::-1]):
