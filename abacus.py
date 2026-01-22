@@ -90,6 +90,24 @@ class Abacus:
     
     >>> Abacus([Rod(1, 1)]).rods[-1]
     (1, 1)
+    
+    >>> print(Abacus([Rod(1, 1)]))
+    O O O O O
+    | | | | |
+    ---------
+    | | | | O
+    O O O O |
+    O O O O O
+    O O O O O
+
+    >>> print(Abacus([Rod(0, 1), Rod(1, 3)]))
+    O O O | O
+    | | | O |
+    ---------
+    | | | O O
+    O O O | O
+    O O O O O
+    O O O O |
     """
     def __init__(self, rods = [], size=5):
         """
